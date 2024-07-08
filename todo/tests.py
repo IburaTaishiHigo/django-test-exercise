@@ -25,7 +25,7 @@ class TaskModelTestCase(TestCase):
         task = Task(title="task2")
         task.save()
 
-        task=Task.objects.get(pk=task.pk)
+        task = Task.objects.get(pk=task.pk)
         self.assertEqual(task.title, "task2")
         self.assertFalse(task.completed)
         self.assertEqual(task.due_at, None)
@@ -65,7 +65,7 @@ class TodoViewTestCase(TestCase):
 
     def test_index_post(self):
         client = Client()
-        data = {"title" : "Test Task", "due_at" : "2024-06-30 23:59:59"}
+        data = {"title": "Test Task", "due_at": "2024-06-30 23:59:59"}
         response = client.post("/", data)
 
         self.assertEqual(response.status_code, 200)
