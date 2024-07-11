@@ -1,6 +1,6 @@
 Django==5.0.6
 whitenoise
 gunicorn
-psycopg-binary
+psycopg2-binary
 dj-database-url
 pytz
