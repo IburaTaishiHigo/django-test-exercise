@@ -1,0 +1,49 @@
+#title {
+    color: #1e366a;
+    border-bottom: solid #1e366a 3px;/*下のボーダー*/
+    padding: 0.5em 0 0.8em 0em;
+}
+
+/* タスクのタイトル名 */
+.cp_iptxt {
+	position: relative;
+	width: 80%;
+	margin: 40px 3%;
+}
+.cp_iptxt input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: 1px solid #ffffff;
+	box-shadow: 1px 1px 2px 0 #707070 inset;
+	border-radius: 4px;
+}
+.ef input[type='text']:focus {
+	outline: none;
+	box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+
+/*日付け入力のデザイン*/
+.datetime {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 36px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+}
+.datetime input[type="datetime-local"] {
+    position: relative;
+    padding: 0 10px;
+    width: 200px;
+    height: 36px;
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #999;
+}
