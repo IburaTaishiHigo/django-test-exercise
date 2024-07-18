@@ -6,20 +6,28 @@
     <title>To Do Application</title>
     <meta charset="UTF-8">
     <meta name="author" content="INIAD">
+    <link href="{% static 'todo/css/base.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <h1>Sample To Do Application</h1>
+    <h1 id="title">Sample To Do Application</h1>
     <p>You can submit tasks from the following form.</p>
     <form action="{% url 'index' %}" method="post">
       {% csrf_token %}
-      <div>
+      <div class="cp_iptxt">
         <label for="titleInput">Title</label><br>
-        <input id="titleInput" name="title" type="text" placeholder="Input title">
+        <label class="ef">
+          <input id="titleInput" name="title" type="text" placeholder="Input title">
+        </label>
+        <br>
+        <label for="DetailInput">Detail</label><br>
+        <input id="DetailInput" name="detail" type="text" placeholder="Input detail (optional)">
       </div>
-      <div>
+      <div class="cp_iptxt">
         <label for="dueInput">Due at:</label><br>
-        <input id="dueInput" name="due_at" type="datetime-local">
+        <label class="datetime">
+          <input id="dueInput" name="due_at" type="datetime-local">
+        </label>
       </div>
       <div>
         <label for="priorityInput">priority:</label><br>
@@ -43,6 +51,7 @@
     {% for task in tasks %}
     <div class="text">
       <h2><a href="{% url 'detail' task.id %}">{{ task.title }}</a></h2>
+      <p>{{ task.detail }}</p>
       <ul>
         <li>priority:
           {% if task.priority == 'low' %}
