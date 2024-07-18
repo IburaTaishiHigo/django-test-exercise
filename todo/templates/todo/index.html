@@ -22,6 +22,14 @@
         <input id="dueInput" name="due_at" type="datetime-local">
       </div>
       <div>
+        <label for="priorityInput">priority:</label><br>
+        <select id="priorityInput" name="priority">
+          <option value="low">低</option>
+          <option value="medium" selected>中</option>
+          <option value="high">高</option>
+        </select>
+      </div>
+      <div>
         <button type="submit">Submit</button>
       </div>
     </form>
@@ -36,6 +44,17 @@
     <div class="text">
       <h2><a href="{% url 'detail' task.id %}">{{ task.title }}</a></h2>
       <ul>
+        <li>priority:
+          {% if task.priority == 'low' %}
+            <img src="{% static 'todo/images/priority_low.jpg' %}" alt="Low Priority" class="img-small">
+          {% elif task.priority == 'medium' %}
+            <img src="{% static 'todo/images/priority_medium.jpg' %}" alt="Medium Priority" class="img-small">
+          {% elif task.priority == 'high' %}
+            <img src="{% static 'todo/images/priority_high.jpg' %}" alt="High Priority"  class="img-small">
+          {% endif %}
+        </li>
+        
+        
         <li>Posted at: {{ task.posted_at }}</li>
         {% if task.due_at %} 
         <li>Due at: {{ task.due_at }}</li>

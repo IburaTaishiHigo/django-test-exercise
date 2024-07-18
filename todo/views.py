@@ -9,7 +9,8 @@ from todo.models import Task
 def index(request):
     if request.method == "POST":
         task = Task(title=request.POST["title"],
-                    due_at=make_aware(parse_datetime(request.POST["due_at"])))
+                    due_at=make_aware(parse_datetime(request.POST["due_at"])),
+                    priority=request.POST["priority"])
         task.save()
 
     if request.GET.get("order") == "due":
