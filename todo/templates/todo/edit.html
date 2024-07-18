@@ -15,7 +15,9 @@
       {% csrf_token %}
       <div>
         <label for="titleInput">Title</label><br>
-        <input id="titleInput" name="title" type="text" placeholder="Input title" value="{{ task.title }}">
+        <input id="titleInput" name="title" type="text" placeholder="Input title" value="{{ task.title }}"><br>
+        <label for="DetailInput">Detail</label><br>
+        <input id="DetailInput" name="detail" type="text" placeholder="Input detail (optional)">
       </div>
       <div>
         <label for="dueInput">Due at:</label><br>
