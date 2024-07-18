@@ -19,6 +19,9 @@
         <label class="ef">
           <input id="titleInput" name="title" type="text" placeholder="Input title">
         </label>
+        <br>
+        <label for="DetailInput">Detail</label><br>
+        <input id="DetailInput" name="detail" type="text" placeholder="Input detail (optional)">
       </div>
       <div class="cp_iptxt">
         <label for="dueInput">Due at:</label><br>
@@ -40,6 +43,7 @@
     {% for task in tasks %}
     <div class="text">
       <h2><a href="{% url 'detail' task.id %}">{{ task.title }}</a></h2>
+      <p>{{ task.detail }}</p>
       <ul>
         <li>Posted at: {{ task.posted_at }}</li>
         {% if task.due_at %} 
