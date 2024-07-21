@@ -6,9 +6,12 @@
 
 /* タスクのタイトル名 */
 .cp_iptxt {
+    color: #000000;
 	position: relative;
 	width: 80%;
 	margin: 40px 3%;
+    font-size: 20px;
+    font-weight: bold;
 }
 .cp_iptxt input[type='text'] {
 	font: 15px/24px sans-serif;
@@ -17,14 +20,28 @@
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #aaaaaa;
+	color: #000000;
 	border: 1px solid #ffffff;
 	box-shadow: 1px 1px 2px 0 #707070 inset;
 	border-radius: 4px;
+    margin: 10px;
 }
+
 .ef input[type='text']:focus {
 	outline: none;
 	box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+
+.cp_iptxt label {
+    margin-bottom: 5px; /* ラベルとテキストボックスの間に空間を作成 */
+}
+
+/*テキストボックスサイズの調整*/
+#DetailInput {
+    padding-bottom: 170px;
+    width: 100%; /* テキストボックスの幅を100%に設定 */
+    height: 200px; /* テキストボックスの高さを40ピクセルに設定 */
+    font-size: 18px; /* フォントサイズを調整 */
 }
 
 /*日付け入力のデザイン*/
@@ -46,4 +63,10 @@
     box-sizing: border-box;
     font-size: 14px;
     color: #999;
+}
+
+/*写真のサイズ調整*/
+.img-small {
+    width: 30px !important; /* 必要に応じてサイズを変更 */
+    height: auto !important; /* 高さを自動で調整 */
 }
